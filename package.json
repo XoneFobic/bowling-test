@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "cross-env NODE_ENV=production ng build --configuration production",
-    "build:gh-pages": "cross-env NODE_ENV=production ng build --configuration production --base-href \"/bowling-test/\"",
+    "build:gh-pages": "cross-env NODE_ENV=production ng build --configuration production --base-href \"./\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "tailwind:install": "tailwind init"

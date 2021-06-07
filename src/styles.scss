@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body, html {
+  @apply min-h-screen min-w-full flex;
+}
+
+body {
+  background: #008cb9 url('/assets/background/bowling_shoes.jpg') no-repeat center;
+  background-size: cover;
+}

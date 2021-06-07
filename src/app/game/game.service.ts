@@ -3,10 +3,15 @@ import { Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class Game { // Normally this should be `GameService`, but for readability I condensed it.
   private rolls: number[] = [];
-  private currentRoll: number = 0;
 
   public constructor() {
     this.newGame();
+  }
+
+  private _currentRoll: number = 0;
+
+  public get currentRoll(): number {
+    return this._currentRoll;
   }
 
   public roll(pins: number): void {
@@ -14,7 +19,7 @@ export class Game { // Normally this should be `GameService`, but for readabilit
       throw new Error('Stay in your own lane please. Thank you.');
     }
 
-    this.rolls[this.currentRoll++] = pins;
+    this.rolls[this._currentRoll++] = pins;
 
     // Alternative for readability
     // this.rolls[this.currentRoll] = pins
@@ -43,7 +48,7 @@ export class Game { // Normally this should be `GameService`, but for readabilit
 
   public newGame(): void {
     this.rolls = new Array(21).fill(0);
-    this.currentRoll = 0;
+    this._currentRoll = 0;
   }
 
   public isStrike(frameIndex: number): boolean {
